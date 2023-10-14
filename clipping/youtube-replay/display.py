@@ -4,9 +4,14 @@ import matplotlib.pyplot as plt
 def getContentFromURL(url):
     return requests.get(url).text
 
-videoId = 'NIJ5RiMAmNs'
+videoId = '-3gUhjY7gTA'
 url = f'https://yt.lemnoslife.com/videos?part=mostReplayed&id={videoId}'
 content = getContentFromURL(url)
+
+# WIP below
+print(content)
+exit()
+
 data = json.loads(content)
 
 Y = []
