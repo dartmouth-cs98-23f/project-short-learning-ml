@@ -16,7 +16,7 @@ from transformers import CLIPProcessor, CLIPModel
 
 import utils
 
-class Model():
+class CLIP:
 
   def __init__(self):
     self.model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
@@ -107,6 +107,6 @@ class Model():
 
 
 if __name__ == "__main__":
-  model = Model()
+  model = CLIP()
 
   # maybe do something more interesting?

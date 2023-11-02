@@ -1,0 +1,5 @@
+# Custom ignore list
+
+# ignore all downloaded videos
+# *.mp4
+# data
