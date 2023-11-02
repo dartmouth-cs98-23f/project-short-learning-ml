@@ -28,29 +28,29 @@ class CLIP:
     self.trim_frames = True
 
     self.categories = [
-          "mathematics"
-        , "technology"
-        , "sports"
-        , "computer science"
-        , "physics"
-        , "geography"
-        , "biology"
-        , "chemistry"
-        , "history"
-        , "art"
-        , "economics"
-        , "politics"
-        , "music"
-        , "literature"
-        , "philosophy"
-        , "engineering"
-        , "medicine"
-        , "psychology"
-        , "sociology"
-        , "astronomy"
-        , "linguistics"
-        , "anthropology"
-        , "law"
+          "machine learning"        # computer science
+        , "computer graphics"       # computer science
+        , "web development"         # computer science
+
+        , "algebra"                 # mathematics
+        , "calculus"                # mathematics
+        , "statistics"              # mathematics
+
+        , "economics"               # economics
+        , "marketing"               # economics
+        , "commerce"                # economics
+
+        , "kinematics"              # physics
+        , "electromagnetism"        # physics
+        , "thermodynamics"          # physics
+
+        , "geology"                 # geography
+        , "cartography"             # geography
+        , "meteorology"             # geography
+
+        , "genetics"                # biology
+        , "biochemistry"            # biology
+        , "ecology"                 # biology
       ]
     
   
@@ -104,6 +104,7 @@ class CLIP:
     # save to csv the results (minus the image column)
     data = data.drop(columns=["image"])
     data.to_csv(f"data/output/{id}.csv")
+    return data
 
 
 if __name__ == "__main__":
