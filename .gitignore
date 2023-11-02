@@ -154,6 +154,7 @@ cython_debug/
 
 # Large data directories/files
 labeling/lda/data
+labeling/lda/results
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
