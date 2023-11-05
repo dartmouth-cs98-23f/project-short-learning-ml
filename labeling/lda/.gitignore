@@ -1,0 +1,5 @@
+# Custom ignore list
+
+/data
+/results
+.DS_Store
