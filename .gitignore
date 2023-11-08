@@ -161,3 +161,7 @@ cython_debug/
 
 # MacOS stuff
 .DS_Store
+
+# Generated files
+*.mp4
+*.csv
