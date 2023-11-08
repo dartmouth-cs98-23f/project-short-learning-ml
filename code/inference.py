@@ -53,7 +53,6 @@ def predict_fn(parsed_req, models):
     return None
 
   data = process_video(parsed_req["id"])
-  print(f"{data['transcript'] = }")
   
   # make sure models has clip and bart
   assert "clip" in models and "bart" in models, "Models must have clip and bart"
@@ -64,7 +63,6 @@ def predict_fn(parsed_req, models):
   # can I run these in parallel?????
   bart_results = bart.inference(data["transcript"])
   print(f"bart done!")
-  print(f"{bart_results = }")
   clip_results = clip.inference(data["frames"])
   print(f"clip done!")
   
