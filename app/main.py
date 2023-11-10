@@ -8,7 +8,11 @@
 from fastapi import FastAPI
 from typing import Optional, Dict
 
-from inference import model_fn, input_fn, predict_fn
+try:
+  from inference import model_fn, input_fn, predict_fn
+  
+except ImportError:
+  from .inference import model_fn, input_fn, predict_fn
 
 # init model
 models = model_fn()
@@ -32,8 +36,8 @@ async def split_video( video_id: Optional[str] = None, video_url: Optional[str] 
     Returns:
       - `Dict[str, str]`: message
   """
-  print(f"video_id: {video_id}")
-  print(f"video_url: {video_url}")
+  print(f"{video_id = }")
+  print(f"{video_url = }")
   input = input_fn({ "video_id": video_id or "", "video_url": video_url or "" })
   
   if not input:

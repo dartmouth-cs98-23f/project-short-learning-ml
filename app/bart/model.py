@@ -15,40 +15,48 @@ from pandas import DataFrame
 
 class BART:
 
-  def __init__(self, multi_label: bool = False, debug: bool = False):
+  def __init__(self, multi_label: bool = False, debug: bool = True):
 
     self.model = AutoModelForSequenceClassification.from_pretrained('facebook/bart-large-mnli')
     self.tokenizer = AutoTokenizer.from_pretrained('facebook/bart-large-mnli')
     self.debug = debug
   
     self.decodes = 0
-    self.trim_frames = True
+    self.trim_frames = False
     self.results = []
 
     self.categories = [
-          "machine learning"        # computer science
-        , "computer graphics"       # computer science
-        , "web development"         # computer science
+        #   "machine learning"        # computer science
+        # , "computer graphics"       # computer science
+        # , "web development"         # computer science
 
-        , "algebra"                 # mathematics
-        , "calculus"                # mathematics
-        , "statistics"              # mathematics
+        # , "algebra"                 # mathematics
+        # , "calculus"                # mathematics
+        # , "statistics"              # mathematics
 
-        , "economics"               # economics
-        , "marketing"               # economics
-        , "commerce"                # economics
+        # , "economics"               # economics
+        # , "marketing"               # economics
+        # , "commerce"                # economics
 
-        , "kinematics"              # physics
-        , "electromagnetism"        # physics
-        , "thermodynamics"          # physics
+        # , "kinematics"              # physics
+        # , "electromagnetism"        # physics
+        # , "thermodynamics"          # physics
 
-        , "geology"                 # geography
-        , "cartography"             # geography
-        , "meteorology"             # geography
+        # , "geology"                 # geography
+        # , "cartography"             # geography
+        # , "meteorology"             # geography
 
-        , "genetics"                # biology
-        , "biochemistry"            # biology
-        , "ecology"                 # biology
+        # , "genetics"                # biology
+        # , "biochemistry"            # biology
+        # , "ecology"                 # biology
+          "walls"
+        , "ceiling"
+        , "flooring"
+        , "windows"
+        , "furniture"
+        , "lighting"
+        , "decor"
+        , "design"
       ]
     
     self.multi_label = multi_label
@@ -80,7 +88,7 @@ class BART:
 
       self.decodes += 1
       if self.decodes % 10 == 0:
-        print(f"Decodes: {self.decodes}")
+        print(f"BART decodes: {self.decodes}")
     
     return results
   
@@ -93,7 +101,7 @@ class BART:
     data = data[data["second"] % 5 == 0]
     print(f"{data = }")
 
-    if self.trim_frames: data = data[:2] # focus on first 2 minutes
+    if self.trim_frames: data = data[:120] # focus on first 2 minutes
 
     runner = lambda x: self(x)
 

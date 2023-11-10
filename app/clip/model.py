@@ -15,11 +15,10 @@ import numpy as np
 from transformers import CLIPProcessor
 from transformers import AutoModel
 from pandas import DataFrame
-import utils
 
 class CLIP:
 
-  def __init__(self):
+  def __init__(self, debug: bool = True):
     
     """
       - "openai/clip-vit-base-patch32"
@@ -33,32 +32,41 @@ class CLIP:
     self.model.config.add_cross_attention = True
   
     self.decodes = 0
-    self.trim_frames = True
+    self.trim_frames = False
+    self.debug = debug
 
     self.categories = [
-          "machine learning"        # computer science
-        , "computer graphics"       # computer science
-        , "web development"         # computer science
+        #   "machine learning"        # computer science
+        # , "computer graphics"       # computer science
+        # , "web development"         # computer science
 
-        , "algebra"                 # mathematics
-        , "calculus"                # mathematics
-        , "statistics"              # mathematics
+        # , "algebra"                 # mathematics
+        # , "calculus"                # mathematics
+        # , "statistics"              # mathematics
 
-        , "economics"               # economics
-        , "marketing"               # economics
-        , "commerce"                # economics
+        # , "economics"               # economics
+        # , "marketing"               # economics
+        # , "commerce"                # economics
 
-        , "kinematics"              # physics
-        , "electromagnetism"        # physics
-        , "thermodynamics"          # physics
+        # , "kinematics"              # physics
+        # , "electromagnetism"        # physics
+        # , "thermodynamics"          # physics
 
-        , "geology"                 # geography
-        , "cartography"             # geography
-        , "meteorology"             # geography
+        # , "geology"                 # geography
+        # , "cartography"             # geography
+        # , "meteorology"             # geography
 
-        , "genetics"                # biology
-        , "biochemistry"            # biology
-        , "ecology"                 # biology
+        # , "genetics"                # biology
+        # , "biochemistry"            # biology
+        # , "ecology"                 # biology
+          "walls"
+        , "ceiling"
+        , "flooring"
+        , "windows"
+        , "furniture"
+        , "lighting"
+        , "decor"
+        , "design"
       ]
     
   
@@ -82,9 +90,11 @@ class CLIP:
     logits_per_image = outputs.logits_per_image
     probs = logits_per_image.softmax(dim=1).detach().numpy()
 
-    self.decodes += 1
-    if self.decodes % 10 == 0:
-      print(f"Decodes: {self.decodes}")
+    if self.debug:
+
+      self.decodes += 1
+      if self.decodes % 10 == 0:
+        print(f"CLIP decodes: {self.decodes}")
     
     return probs
   
@@ -92,7 +102,7 @@ class CLIP:
 
     data = frames.copy()
 
-    if self.trim_frames: data = data[:2] # focus on first 2 minutes
+    if self.trim_frames: data = data[:120] # focus on first 2 minutes
 
     runner = lambda x: self(self.categories, x)[0]
 
@@ -116,6 +126,7 @@ class CLIP:
   
 
 if __name__ == "__main__":
+
   model = CLIP()
 
   # maybe do something more interesting?

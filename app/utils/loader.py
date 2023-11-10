@@ -74,7 +74,7 @@ def process_video(id: str) -> Dict[str, DataFrame]:
 
   data =  load_data(id)
   
-  remove_directories()
+  # remove_directories()
   return data
 
 
