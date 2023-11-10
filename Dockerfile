@@ -1,21 +1,17 @@
 FROM continuumio/miniconda3
 
-WORKDIR /discite
+WORKDIR /code
 
-# Create the environment:
-COPY environment.yml .
+COPY ./environment.yml /code/environment.yml
+
 RUN conda env create -f environment.yml
 
-# Make RUN commands use the new environment:
 SHELL ["conda", "run", "-n", "senior-design", "/bin/bash", "-c"]
 
-# Demonstrate the environment is activated:
-RUN echo "Make sure fastapi is installed:"
 RUN python -c "import fastapi"
 
-# The code to run when container is started:
-COPY app .
+COPY ./app /code/app
 
-WORKDIR /discite/app
+WORKDIR /code/app
 
-ENTRYPOINT ["uvicorn", "main:app"]
+ENTRYPOINT ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
