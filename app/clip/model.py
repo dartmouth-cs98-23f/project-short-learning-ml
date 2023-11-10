@@ -92,7 +92,7 @@ class CLIP:
 
     data = frames.copy()
 
-    if self.trim_frames: data = data[:120] # focus on first 2 minutes
+    if self.trim_frames: data = data[:2] # focus on first 2 minutes
 
     runner = lambda x: self(self.categories, x)[0]
 
@@ -105,9 +105,9 @@ class CLIP:
 
     # this is not needed, we can eventually drop it.
     # I just wanted to visualize the actual softmax values
-    for i in range(len(self.categories)):
-      category = self.categories[i]
-      data[category] = softmax_values.apply(lambda x: x[i])
+    # for i in range(len(self.categories)):
+    #   category = self.categories[i]
+    #   data[category] = softmax_values.apply(lambda x: x[i])
 
     # save to csv the results (minus the image column)
     data = data.drop(columns=["image"])

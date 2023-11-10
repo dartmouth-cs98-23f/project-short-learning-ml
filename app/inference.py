@@ -24,35 +24,32 @@ def model_fn():
     , "bart": BART()
   }
 
-def input_fn(req, request_type) -> Optional[Dict[str, str]]:
-  if request_type != "application/json":
-    return None
+def input_fn(req: Dict[str, str]) -> Optional[str]:
   
-  if "body" not in req:
-    return None
+  # if "id" not in req and "url" not in req:
+  #   return None
   
-  body = req["body"]
   
-  id = body.get("id", None)
-  url = body.get("url", None)
+  video_id = req.get("video_id", "")
+  video_url = req.get("video_url", "")
   
-  assert id or url, "Must provide either id or url"
+  if not (video_id or video_url):
+    return ""
   
-  if url and not id:
-    id: str = url.split(".com/watch?v=")[1]
-    id = id.split("&")[0]
+  elif not video_id:
     
-  return { "id": id }
+    video_id: str = video_url.split(".com/watch?v=")[1]
+    video_id = video_id.split("&")[0]
+    print(f"video_id: {video_id}")
+    
+  return video_id
 
-def predict_fn(parsed_req, models):
+def predict_fn(video_id, models) -> Dict[str, str]:
   """
     Run inference on the model
   """
-  
-  if not parsed_req or "id" not in parsed_req:
-    return None
 
-  data = process_video(parsed_req["id"])
+  data = process_video(video_id)
   
   # make sure models has clip and bart
   assert "clip" in models and "bart" in models, "Models must have clip and bart"
@@ -61,15 +58,17 @@ def predict_fn(parsed_req, models):
   bart: BART = models["bart"]
   
   # can I run these in parallel?????
-  bart_results = bart.inference(data["transcript"])
+  bart_results: DataFrame = bart.inference(data["transcript"])
   print(f"bart done!")
-  clip_results = clip.inference(data["frames"])
+  clip_results: DataFrame = clip.inference(data["frames"])
   print(f"clip done!")
   
   return {
       "clip": clip_results.to_json()
     , "bart": bart_results.to_json()
   }
+  
+__all__ = ["model_fn", "input_fn", "predict_fn"]
 
 def test():
   """
@@ -81,20 +80,20 @@ def test():
   
   print(f"parsing request...")
   
-  parsed_req = input_fn({
-      "body": {
-          "url": "https://www.youtube.com/watch?v=k7RM-ot2NWY&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=2"
-      }
-  }, "application/json")
+  # parsed_req = input_fn({
+  #     "body": {
+  #         "url": "https://www.youtube.com/watch?v=k7RM-ot2NWY&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=2"
+  #     }
+  # }, "application/json")
   
 
-  print(f"running inference...")
+  # print(f"running inference...")
   
-  results = predict_fn(parsed_req, models)
+  # results = predict_fn(parsed_req, models)
   
-  print(f"done!")
+  # print(f"done!")
   
-  print(results)
+  # print(results)
   
 if __name__ == "__main__":
   test()

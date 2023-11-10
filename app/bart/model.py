@@ -93,7 +93,7 @@ class BART:
     data = data[data["second"] % 5 == 0]
     print(f"{data = }")
 
-    if self.trim_frames: data = data[:60] # focus on first 2 minutes
+    if self.trim_frames: data = data[:2] # focus on first 2 minutes
 
     runner = lambda x: self(x)
 
