@@ -34,12 +34,12 @@ def clipper(topics, timestamps, window_size, mean_or_median, change_threshold):
 
     return list_of_start_and_end_times
 
-topics = [1, 1, 1, 1, 1, 2, 2, 2, 2, 1]
-timestamps = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+topics = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 2, 2, 1, 1, 1, 1, 1]
+timestamps = [i for i in range(len(topics))]
 
 change_threshold = 0.7
 window_size = 3
-result = clipper(topics, timestamps, window_size, 'median', change_threshold)
+result = clipper(topics, timestamps, window_size, 'mean', change_threshold)
 
 print("Points in time where the trend changes:")
 for start, end in result:
