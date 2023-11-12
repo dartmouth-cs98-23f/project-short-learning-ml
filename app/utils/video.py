@@ -7,6 +7,7 @@
 
 import os
 from pytube import YouTube
+from yt_dlp import YoutubeDL
 
 def download_video(url: str, filename: str) -> None:
   """
@@ -21,23 +22,38 @@ def download_video(url: str, filename: str) -> None:
 
     Raises an exception: if error connecting or downloading
   """
-  if os.path.exists(filename):
-    print(f"Video {filename} already downloaded")
-    return
 
   try:
-    link = YouTube(url)
+    ydl_opts = {
+        'format': 'best[ext=mp4]/best',  # Explicitly specify the best format (single file)
+        'outtmpl': filename,
+    }
 
+    with YoutubeDL(ydl_opts) as ydl:
+          ydl.download([url])
+          print(f"Downloaded {filename} from {url}")
   except Exception as e:
     print(f"Error Connecting: {e}")
     raise e
-  
-  stream = link.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
-  
-  if not stream:
-    print(f"Error: No stream found for {url}")
-    raise Exception(f"No stream found for {url}")
-  
 
-  stream.download(filename=filename)
-  print(f"Downloaded {filename} from {url}")
+def download_videos_from_file(file_path: str) -> None:
+    """
+    Download videos from URLs and filenames listed in a text file.
+
+    Args:
+      - `file_path (str)`: Path to the text file containing [url, file name] pairs
+
+    Returns:
+      - `None`
+    """
+    with open(file_path, 'r') as file:
+        for line in file:
+            url, topic, subtopic, title = line.strip().split(', ')
+            topic = topic.replace(' ', '_')
+            subtopic = subtopic.replace(' ', '_')
+            title = title.replace(' ', '_')
+            download_video(url, f"{topic}_{subtopic}_{title}")
+
+if __name__ == "__main__":
+    file_path = "videos_23f"  # Change this to your actual text file path
+    download_videos_from_file(file_path)
