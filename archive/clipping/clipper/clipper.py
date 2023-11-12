@@ -15,7 +15,7 @@ def clipper(topics, timestamps, window_size, mean_or_median, change_threshold):
         window_topics.append(topics[i])
         window_timestamps.append(timestamps[i])
 
-        if len(window_topics) == window_size or i == n - 1 or i == 0:
+        if len(window_topics) == window_size or i == n - 1 or timestamps[i] == 0:
             if mean_or_median == 'mean':
                 comp = statistics.mean(topics[i:i+window_size])
             else:
@@ -24,23 +24,24 @@ def clipper(topics, timestamps, window_size, mean_or_median, change_threshold):
             if i == 0:
                 curr_comp = comp
 
-            print(i, curr_comp, comp, window_topics)
+            # print(i, curr_comp, comp, window_topics)
                 
             if (abs(curr_comp - comp) > change_threshold) or i == n - 1:
-                print("change at", window_timestamps[-1])
                 curr_comp = comp
-                list_of_start_and_end_times.append((window_timestamps[0], window_timestamps[-1]))
+                list_of_start_and_end_times.append((window_timestamps[0], window_timestamps[-2]))
+                end = window_timestamps[-1]
                 window_timestamps = deque()
+                window_timestamps.append(end)
 
     return list_of_start_and_end_times
 
-topics = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 2, 2, 1, 1, 1, 1, 1]
-timestamps = [i for i in range(len(topics))]
+# topics = [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 2, 2, 1, 1, 1, 1, 1]
+# timestamps = [i for i in range(len(topics))]
 
-change_threshold = 0.7
-window_size = 3
-result = clipper(topics, timestamps, window_size, 'mean', change_threshold)
+# change_threshold = 0.7
+# window_size = 3
+# result = clipper(topics, timestamps, window_size, 'mean', change_threshold)
 
-print("Points in time where the trend changes:")
-for start, end in result:
-    print(f"Start: {start}, End: {end}")
+# print("Points in time where the trend changes:")
+# for start, end in result:
+#     print(f"Start: {start}, End: {end}")
