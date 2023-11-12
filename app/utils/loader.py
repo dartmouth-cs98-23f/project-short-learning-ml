@@ -45,7 +45,7 @@ def remove_directories() -> None:
     shutil.rmtree("data")
 
 
-def process_video(id: str) -> Dict[str, DataFrame]:
+def process_video(id: str, filename: str) -> Dict[str, DataFrame]:
   """
   Download a youtube video and extract frames and transcript.
 
@@ -63,22 +63,21 @@ def process_video(id: str) -> Dict[str, DataFrame]:
   url = f"https://www.youtube.com/watch?v={id}"
   
   # download video if it does not exist yet.
-  if not os.path.exists(f"data/videos/{id}.mp4"):
-    download_video(url, f"data/videos/{id}.mp4")
-    extract_frames(f"data/videos/{id}.mp4", f"data/frames/{id}"),
-
+  if not os.path.exists(f"data/videos/{filename}.mp4"):
+    download_video(url, f"data/videos/{filename}.mp4")
+    extract_frames(f"data/videos/{filename}.mp4", f"data/frames/{filename}"),
 
   # download transcript if it does not exist yet.
-  if not os.path.exists(f"data/transcripts/{id}.csv"):
-    download_transcript(id, f"data/transcripts/{id}.csv")
+  if not os.path.exists(f"data/transcripts/{filename}.csv"):
+    download_transcript(id, f"data/transcripts/{filename}.csv")
 
-  data =  load_data(id)
+  data =  load_data(filename)
   
   # remove_directories()
   return data
 
 
-def load_data(id: str) -> Dict[str, DataFrame]:
+def load_data(filename: str) -> Dict[str, DataFrame]:
   """
   Load the data for a video id.
 
@@ -89,15 +88,15 @@ def load_data(id: str) -> Dict[str, DataFrame]:
     - `DataFrame`: dataframe of data
   """
 
-  frames = os.listdir(f"data/frames/{id}")
+  frames = os.listdir(f"data/frames/{filename}")
 
-  transcript_df = pd.read_csv(f"data/transcripts/{id}.csv", sep=',', encoding="utf-8")
+  transcript_df = pd.read_csv(f"data/transcripts/{filename}.csv", sep=',', encoding="utf-8")
   transcript_df["second"] = transcript_df["second"].apply(lambda x: int(x))
   
   frames_df = DataFrame([
     {
       "second": i,
-      "image": Image.open(f"data/frames/{id}/{i}.jpg"),
+      "image": Image.open(f"data/frames/{filename}/{i}.jpg"),
     }
     for i in range(len(frames))
   ])
@@ -108,11 +107,15 @@ def load_data(id: str) -> Dict[str, DataFrame]:
   }
   
 def main() -> None:
-  id = "_XdD-TQseU4"
-
-  data = process_video(id)
-  for df in data.values():
-    print(df.head(10))
+  file_path = "videos_23f"
+  with open(file_path, 'r') as file:
+    for line in file:
+      url, topic, subtopic, title = line.strip().split(', ')
+      id = url.split('=')[-1]
+      topic = topic.replace(' ', '')
+      subtopic = subtopic.replace(' ', '')
+      title = title.replace(' ', '_')
+      process_video(id, f"playlist_{topic}_{subtopic}_{title}")
 
 if __name__ == "__main__":
   main()
