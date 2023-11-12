@@ -8,7 +8,11 @@
 from fastapi import FastAPI
 from typing import Optional, Dict
 
-from inference import model_fn, input_fn, predict_fn
+try:
+  from inference import model_fn, input_fn, predict_fn
+  
+except ImportError:
+  from .inference import model_fn, input_fn, predict_fn
 
 # init model
 models = model_fn()

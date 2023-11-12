@@ -6,12 +6,17 @@
 """
 
 from pandas import DataFrame
-from clip import CLIP
-from bart import BART
-
 from typing import Optional, Dict
+import os
 
-from utils import process_video
+try:
+  from clip import CLIP
+  from bart import BART
+  from utils import process_video
+except ImportError:
+  from .clip import CLIP
+  from .bart import BART
+  from .utils import process_video
 import asyncio
 
 def model_fn():
@@ -57,10 +62,18 @@ def predict_fn(video_id, models) -> Dict[str, str]:
   clip: CLIP = models["clip"]
   bart: BART = models["bart"]
   
+  if not os.path.exists("data/output"):
+    os.mkdir("data/output")
+
   # can I run these in parallel?????
   bart_results: DataFrame = bart.inference(data["transcript"])
+  
+  # create output dir if nonexistent
+  bart_results.to_csv(f"data/output/{video_id}_bart.csv")
+  
   print(f"bart done!")
   clip_results: DataFrame = clip.inference(data["frames"])
+  clip_results.to_csv(f"data/output/{video_id}_clip.csv")
   print(f"clip done!")
   
   return {

@@ -5,7 +5,7 @@ This repository contains all things machine learning for the short-form learning
 ## Architecture
 
 - [`app/`](./app/) contains the FastAPI application.
-- [`archive/`](./app/) contains old code that is no longer used.
+- [`archive/`](./archive/) contains old code that is no longer used.
 
 ## Setup
 
