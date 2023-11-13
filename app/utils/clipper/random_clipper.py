@@ -8,8 +8,8 @@ os.chdir(os.path.abspath(os.path.dirname(__file__)))
 def clipper(filename):
     df = pd.read_csv(filename)
     duration = df['second'].iloc[-1]
-    clips = int(duration//40)
-    return extract_random_clip_times(duration, num_clips=clips)    
+    clips = int(duration//60)
+    return sorted(extract_random_clip_times(duration, num_clips=clips), key=lambda x: x[0].total_seconds())  
 
 def extract_random_clip_times(total_video_length, clip_duration=30, num_clips=5):
     clip_times = []
@@ -33,3 +33,13 @@ def extract_random_clip_times(total_video_length, clip_duration=30, num_clips=5)
         clip_times.append((timedelta(seconds=start_time), timedelta(seconds=end_time)))
 
     return clip_times
+
+# data_dir = '../data/'
+# transcripts_dir = 'transcripts/'
+# transcript_path = data_dir+transcripts_dir
+
+# filename = 'playlist_Arts&Crafts_Crocheting_Crochet_Duck_Tutorial_(No_Sewing!).csv'
+# result = clipper(transcript_path+filename)
+
+# for i, (start_time, end_time) in enumerate(result, start=1):
+#     print(f"Clip {i}: Start Time: {start_time}, End Time: {end_time}")
