@@ -5,12 +5,8 @@ import os
 
 os.chdir(os.path.abspath(os.path.dirname(__file__)))
 
-data_dir = '../data/'
-transcripts_dir = 'transcripts/'
-
-def random_clipper(filename):
-    video_path =  data_dir+transcripts_dir+filename
-    df = pd.read_csv(video_path)
+def clipper(filename):
+    df = pd.read_csv(filename)
     duration = df['second'].iloc[-1]
     clips = int(duration//40)
     return extract_random_clip_times(duration, num_clips=clips)    
@@ -37,8 +33,3 @@ def extract_random_clip_times(total_video_length, clip_duration=30, num_clips=5)
         clip_times.append((timedelta(seconds=start_time), timedelta(seconds=end_time)))
 
     return clip_times
-
-res = random_clipper('playlist_SecondPunicWar_CrossingTheAlps_Hannibal_Crosses_the_Alps_-_The_Invasion_of_Italy_-_The_Great_Carthaginian_General_-_Part_23.csv')
-
-for i, (start_time, end_time) in enumerate(res, start=1):
-    print(f"Clip {i}: Start Time: {start_time}, End Time: {end_time}")
