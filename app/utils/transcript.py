@@ -15,7 +15,7 @@ def download_transcript(id: str, filename: str) -> None:
     print(f"Transcript {filename} already downloaded")
     return
 
-  transcript = YouTubeTranscriptApi.get_transcript(id)
+  transcript = YouTubeTranscriptApi.get_transcript(id, languages=('en', 'en-US'))
   print(f"Downloading transcript for {id} to {filename}")
   with open(filename, "w") as f:
     writer = csv.writer(f)
