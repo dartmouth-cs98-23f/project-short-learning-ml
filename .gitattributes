@@ -3,3 +3,4 @@
 
 *.yml linguist-language=YAML
 *.ipynb linguist-detectable=false
+*.ipynb filter=strip-notebook-output
