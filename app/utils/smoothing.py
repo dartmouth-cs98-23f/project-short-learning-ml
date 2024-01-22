@@ -9,7 +9,7 @@ import pandas as pd
 
 def tfidf(df: pd.DataFrame, /, start_column=0) -> pd.DataFrame:
   """
-    TDIDF (Term Frequency Inverse Document Frequency) is often used as a way
+    TF-IDF (Term Frequency Inverse Document Frequency) is often used as a way
     of mitigating the effect of common words in a corpus.
     
     For example, if we have a corpus of 100 documents, and the word "the" appears
@@ -50,6 +50,8 @@ def tfidf(df: pd.DataFrame, /, start_column=0) -> pd.DataFrame:
     
     Example
     -------
+    
+    _Note how the first row is re-weighted based on uniqueness._
     
     >>> df = pd.DataFrame([
     ...   ["ONE", 1, 1, 1],
@@ -101,8 +103,6 @@ def test():
     ["TWO", 0, 0, 0],
     ["THREE", 3, 2, 0]
   ], columns=["label", "a", "b", "c"])
-  
-  # notice how the first column is re-weighted based on uniqueness
   
   print(df)
   print(tfidf(df, start_column=1))
