@@ -41,7 +41,7 @@ def tfidf(df: pd.DataFrame, /, start_column=0) -> pd.DataFrame:
       NOTE: We create a copy of this dataframe, so the original is not modified.
       
     start_column: int (optional)
-      The column (index) to start tf-idf on.
+      The column (index) to start tf-idf on (INCLUSIVE).
       This is useful to avoid computing on the first few columns which may be row labels.
       
     Returns
