@@ -50,19 +50,28 @@ def tfidf(df: pd.DataFrame, /, start_column=0) -> pd.DataFrame:
     
     Example
     -------
+    
     >>> df = pd.DataFrame([
-    ...   [1, 1, 1],
-    ...   [0, 0, 0],
-    ...   [3, 2, 0]
-    ... ], columns=["a", "b", "c"])
-    >>> tfidf(df) # notice how the first column is re-weighted based on uniqueness
-    ...             a         b         c
-    ...   0  0.157895  0.210526  0.631579
-    ...   1  0.000000  0.000000  0.000000
-    ...   2  0.529412  0.470588  0.000000
+    ...   ["ONE", 1, 1, 1],
+    ...   ["TWO", 0, 0, 0],
+    ...   ["THREE", 3, 2, 0]
+    ... ], columns=["label", "a", "b", "c"])
+    ...
+    >>> print(df)
+    ...    label  a  b  c
+    ... 0    ONE  1  1  1
+    ... 1    TWO  0  0  0
+    ... 2  THREE  3  2  0
+    ...
+    >>> tfidf(df, start_column=1)
+    ...   label         a         b         c
+    ... 0    ONE  0.157895  0.210526  0.631579
+    ... 1    TWO  0.000000  0.000000  0.000000
+    ... 2  THREE  0.529412  0.470588  0.000000
   """
   
   #? copy everything after the start column, inclusive
+  old_df = df
   df = df.iloc[:, start_column:].copy()
 
   #? compute sums for each column (keyword)
@@ -79,19 +88,24 @@ def tfidf(df: pd.DataFrame, /, start_column=0) -> pd.DataFrame:
   #? replace NaNs with 0s
   df = df.fillna(0)
   
+  #? prepend the columns before the start column
+  df = pd.concat([old_df.iloc[:, :start_column], df], axis=1)
+  
   return  df
 
 
 ### TESTS ###
 def test():
   df = pd.DataFrame([
-    [1, 1, 1],
-    [0, 0, 0],
-    [3, 2, 0]
-  ], columns=["a", "b", "c"])
+    ["ONE", 1, 1, 1],
+    ["TWO", 0, 0, 0],
+    ["THREE", 3, 2, 0]
+  ], columns=["label", "a", "b", "c"])
+  
+  # notice how the first column is re-weighted based on uniqueness
   
   print(df)
-  print(tfidf(df))
+  print(tfidf(df, start_column=1))
   
 if __name__ == "__main__":
   test()
