@@ -1,3 +1,7 @@
+# Data files
+app/data/
+archive/labeling/*/data
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
