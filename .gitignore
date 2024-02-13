@@ -1,6 +1,9 @@
 # Data files
 app/data/*
+app/*/data/*/*/*
+app/*/data/*/*
 app/*/data/*
+
 archive/labeling/*/data
 
 # Byte-compiled / optimized / DLL files
