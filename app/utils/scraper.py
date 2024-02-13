@@ -1,44 +1,45 @@
 import json
-from youtubesearchpython import ChannelSearch, ResultMode
+from youtubesearchpython import VideosSearch, ResultMode
 
-# Read channel IDs
-with open("channels", "r") as channels_file:
-    channel_ids = [line.strip() for line in channels_file]
-
-# Read keyword
+# Read keywords from a file
 with open("topics", "r") as topics_file:
-    keywords = [line.strip().split(", ") for line in topics_file]
+    keywords = [line.strip() for line in topics_file]
 
-with open("videos_24w", "w") as output_file:
-    # Loop through each channel ID
-    for channel_id in channel_ids:
-        # Loop through each keyword
-        for keyword_info in keywords:
-            keyword = keyword_info[0]
-            subtopic = keyword_info[1]
-            topic = keyword_info[2]
+# Initialize a list to hold all video metadata
+videos_metadata = []
 
-            # Search
-            search = ChannelSearch(keyword, channel_id)
-            results = search.result(mode=ResultMode.json)
-            results_json = search.result(mode=ResultMode.json)
-            results = None
-      
-            try:
-                results = json.loads(results_json)
-            except json.JSONDecodeError:
-                print(f"Error decoding JSON for channel {channel_id} and keyword {keyword}")
-                continue
-            
-            if results['result']:
-                
-                top_result = results['result'][:3]
+# Loop through each keyword
+for keyword in keywords:
+    # Search for videos using the keyword
+    search = VideosSearch(keyword.replace(", ", " "), limit=3)
+    results_json = search.result(mode=ResultMode.json)
 
-                # Extract and write relevant information for each result
-                for result in top_result:
-                    video_link = f"https://www.youtube.com{result['uri']}"
-                    video_title = result['title']
-                    output_line = f"{video_link}, {topic}, {subtopic}, {video_title}\n"
-                    output_file.write(output_line)
+    try:
+        results = json.loads(results_json)
+    except json.JSONDecodeError:
+        print(f"Error decoding JSON for keyword {keyword}")
+        continue
 
-print("Check 'videos_24w' for the results")
+    if results['result']:
+        top_results = results['result']
+
+        # Extract and store relevant information for each result
+        for result in top_results:
+            video_data = {
+                'title': result['title'],
+                'link': result['link'],
+                'topics': keyword,
+                'author': result['channel']['name'],
+                'duration': result['duration'],
+                'publish_date': result['publishedTime'],
+                "viewCount": int(result['viewCount']['text'].replace(" views", "").replace(",", "")),
+                "description": (result.get('descriptionSnippet') or [{}])[0].get('text', 'No description'),
+                # Add any other metadata you want here
+            }
+            videos_metadata.append(video_data)
+
+# Write the collected metadata to a file in JSON format
+with open("video_metadata.json", "w") as output_file:
+    json.dump(videos_metadata, output_file, indent=4)
+
+print("Check 'video_metadata.json' for the results")

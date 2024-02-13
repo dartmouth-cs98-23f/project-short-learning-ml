@@ -1,0 +1,872 @@
+[
+    {
+        "title": "Why Large Language Models Hallucinate",
+        "link": "https://www.youtube.com/watch?v=cfqtFvWOfg0",
+        "topics": "ML, NLP, LLM, GPT",
+        "author": "IBM Technology",
+        "duration": "9:38",
+        "publish_date": "9 months ago",
+        "viewCount": 137308,
+        "description": "Large language models (LLMs) like chatGPT can generate authoritative-sounding prose on many topics and domains, they are\u00a0..."
+    },
+    {
+        "title": "What are Transformers (Machine Learning Model)?",
+        "link": "https://www.youtube.com/watch?v=ZXiruGOCn9s",
+        "topics": "ML, NLP, LLM, GPT",
+        "author": "IBM Technology",
+        "duration": "5:50",
+        "publish_date": "1 year ago",
+        "viewCount": 270372,
+        "description": "Transformers? In this case, we're talking about a "
+    },
+    {
+        "title": "BERT and GPT in Language Models like ChatGPT or BLOOM |  EASY Tutorial on Large Language Models LLM",
+        "link": "https://www.youtube.com/watch?v=ewjlmLQI9kc",
+        "topics": "ML, NLP, LLM, GPT",
+        "author": "code_your_own_AI",
+        "duration": "2:58",
+        "publish_date": "1 year ago",
+        "viewCount": 15237,
+        "description": "Transformer-based self-supervised Language Models explained: BERT and "
+    },
+    {
+        "title": "Training Your Own AI Model Is Not As Hard As You (Probably) Think",
+        "link": "https://www.youtube.com/watch?v=fCUkvL0mbxI",
+        "topics": "ML, NLP, LLM, Gemini",
+        "author": "Steve (Builder.io)",
+        "duration": "10:24",
+        "publish_date": "2 months ago",
+        "viewCount": 212145,
+        "description": "#ai #developer #javascript #react."
+    },
+    {
+        "title": "How Large Language Models Work",
+        "link": "https://www.youtube.com/watch?v=5sLYAQS9sWQ",
+        "topics": "ML, NLP, LLM, Gemini",
+        "author": "IBM Technology",
+        "duration": "5:34",
+        "publish_date": "6 months ago",
+        "viewCount": 252610,
+        "description": "Large language models-- or LLMs --are a type of generative pretrained transformer (GPT) that can create human-like text and\u00a0..."
+    },
+    {
+        "title": "End to End Nutritionist Generative AI Doctor Using Google Gemini Pro Vision Large Image Models",
+        "link": "https://www.youtube.com/watch?v=qZWymdgDLv0",
+        "topics": "ML, NLP, LLM, Gemini",
+        "author": "Krish Naik",
+        "duration": "19:22",
+        "publish_date": "2 weeks ago",
+        "viewCount": 17202,
+        "description": "\u25bbLearn In One Tutorials Statistics in 6 hours:\u00a0..."
+    },
+    {
+        "title": "Efficient Fine-Tuning for Llama-v2-7b on a Single GPU",
+        "link": "https://www.youtube.com/watch?v=g68qlo9Izf0",
+        "topics": "ML, NLP, LLM, LLaMA",
+        "author": "DeepLearningAI",
+        "duration": "59:53",
+        "publish_date": "Streamed 5 months ago",
+        "viewCount": 72697,
+        "description": "The first problem you're likely to encounter when fine-tuning an "
+    },
+    {
+        "title": "LLM Explained |  What is LLM",
+        "link": "https://www.youtube.com/watch?v=67_aMPDk2zw",
+        "topics": "ML, NLP, LLM, LLaMA",
+        "author": "codebasics",
+        "duration": "4:17",
+        "publish_date": "5 months ago",
+        "viewCount": 62104,
+        "description": "Simple and easy explanation of "
+    },
+    {
+        "title": "Building with Instruction-Tuned LLMs: A Step-by-Step Guide",
+        "link": "https://www.youtube.com/watch?v=eTieetk2dSw",
+        "topics": "ML, NLP, LLM, LLaMA",
+        "author": "DeepLearningAI",
+        "duration": "59:35",
+        "publish_date": "Streamed 8 months ago",
+        "viewCount": 41619,
+        "description": "Welcome, to the Building with Instruction-Tuned LLMs: A Step-by-Step Guide workshop! We will be taking questions during the\u00a0..."
+    },
+    {
+        "title": "Send Up To Millions Of Emails per DAY With Gmail API + Google Cloud Functions!",
+        "link": "https://www.youtube.com/watch?v=aoI_KbqFxcQ",
+        "topics": "Backend, API, Google, Gmail API",
+        "author": "BetterBots",
+        "duration": "22:57",
+        "publish_date": "1 year ago",
+        "viewCount": 23404,
+        "description": "Bulk send hundreds or thousands of emails per day, and scale to Millions! NOTICE SEPTEMBER 2022: SINCE INTEGROMAT\u00a0..."
+    },
+    {
+        "title": "Mastering Gmail API Integration with Node.js: A Comprehensive Guide",
+        "link": "https://www.youtube.com/watch?v=jv2PLpfpvXo",
+        "topics": "Backend, API, Google, Gmail API",
+        "author": "Programming with AK",
+        "duration": "35:42",
+        "publish_date": "6 months ago",
+        "viewCount": 1798,
+        "description": "In this video, we'll take you through the step-by-step process of harnessing the power of the "
+    },
+    {
+        "title": "Getting Started With Google APIs For Python Development",
+        "link": "https://www.youtube.com/watch?v=PKLG5pfs4nY",
+        "topics": "Backend, API, Google, Gmail API",
+        "author": "Jie Jenn",
+        "duration": "22:37",
+        "publish_date": "1 year ago",
+        "viewCount": 22297,
+        "description": "Some of the services under "
+    },
+    {
+        "title": "The Ultimate Guide: Uploading Files to Google Drive with NodeJS using Google Drive APIs #nodejs",
+        "link": "https://www.youtube.com/watch?v=bkaQTLCBBeo",
+        "topics": "Backend, API, Google, Drive API",
+        "author": "Proto Coders Point",
+        "duration": "15:46",
+        "publish_date": "5 months ago",
+        "viewCount": 5804,
+        "description": "googledrive"
+    },
+    {
+        "title": "Google Drive and Node JS integration",
+        "link": "https://www.youtube.com/watch?v=Rbr6KhpiGRo",
+        "topics": "Backend, API, Google, Drive API",
+        "author": "ithinktechnologies",
+        "duration": "27:10",
+        "publish_date": "9 months ago",
+        "viewCount": 6573,
+        "description": "Integrating node js with "
+    },
+    {
+        "title": "Google Drive API in Python | Getting Started",
+        "link": "https://www.youtube.com/watch?v=9K2P2bWEd90",
+        "topics": "Backend, API, Google, Drive API",
+        "author": "Jie Jenn",
+        "duration": "8:20",
+        "publish_date": "3 years ago",
+        "viewCount": 87344,
+        "description": "Google Drive API"
+    },
+    {
+        "title": "How to use state in React - Web Front-end Development | Lesson 45 (Free Coding Bootcamp)",
+        "link": "https://www.youtube.com/watch?v=gIqxDnj2yfI",
+        "topics": "Frontend, Web development, React, States",
+        "author": "Code with Vincent",
+        "duration": "3:38",
+        "publish_date": "1 year ago",
+        "viewCount": 454,
+        "description": "Free Coding Bootcamp - Go from Zero to "
+    },
+    {
+        "title": "How I'd Learn Web Development (If I Could Start Over)",
+        "link": "https://www.youtube.com/watch?v=TG6XSFeOT3g",
+        "topics": "Frontend, Web development, React, States",
+        "author": "Dylan Cole",
+        "duration": "6:55",
+        "publish_date": "10 months ago",
+        "viewCount": 287075,
+        "description": "In my opinion, people try to bait you on the internet by getting you to think or do certain things that'll \"help\" you bypass the process\u00a0..."
+    },
+    {
+        "title": "What is state management ? Front-end state management explained",
+        "link": "https://www.youtube.com/watch?v=e0pw9j4pi2A",
+        "topics": "Frontend, Web development, React, States",
+        "author": "Bikash web",
+        "duration": "5:56",
+        "publish_date": "1 year ago",
+        "viewCount": 2679,
+        "description": "This video is an explanation of "
+    },
+    {
+        "title": "\ud83d\udd34 Building a Todo List App Project with Local Storage in React JS  & Hooks in 2021",
+        "link": "https://www.youtube.com/watch?v=uTP3ffTx_Xs",
+        "topics": "Frontend, Web development, React, Local Storage",
+        "author": "Thapa Technical",
+        "duration": "14:45",
+        "publish_date": "2 years ago",
+        "viewCount": 85574,
+        "description": "Welcome, Building a Todo List App Project with "
+    },
+    {
+        "title": "Frontend Web Development: In-Depth Project Tutorial (HTML, CSS, JavaScript, TypeScript, React)",
+        "link": "https://www.youtube.com/watch?v=MsnQ5uepIaE",
+        "topics": "Frontend, Web development, React, Local Storage",
+        "author": "freeCodeCamp.org",
+        "duration": "10:02:10",
+        "publish_date": "10 months ago",
+        "viewCount": 268790,
+        "description": "In this "
+    },
+    {
+        "title": "How to Build a Todo List App with Local Storage for Beginners - HTML, CSS & JavaScript",
+        "link": "https://www.youtube.com/watch?v=SeKQSQDUMDQ",
+        "topics": "Frontend, Web development, React, Local Storage",
+        "author": "Web Dev Tutorials",
+        "duration": "22:20",
+        "publish_date": "1 year ago",
+        "viewCount": 22393,
+        "description": "Learn how to build a todo list "
+    },
+    {
+        "title": "Seaborn Is The Easier Matplotlib",
+        "link": "https://www.youtube.com/watch?v=ooqXQ37XHMM",
+        "topics": "Data Science, Python, Visualization, Seaborn",
+        "author": "NeuralNine",
+        "duration": "22:39",
+        "publish_date": "1 year ago",
+        "viewCount": 138096,
+        "description": "This video is about "
+    },
+    {
+        "title": "Data Analysis with Python - Full Course for Beginners (Numpy, Pandas, Matplotlib, Seaborn)",
+        "link": "https://www.youtube.com/watch?v=r-uOLxNrNk8",
+        "topics": "Data Science, Python, Visualization, Seaborn",
+        "author": "freeCodeCamp.org",
+        "duration": "4:22:13",
+        "publish_date": "3 years ago",
+        "viewCount": 3070974,
+        "description": "Learn "
+    },
+    {
+        "title": "Python for Data Science | Matplotlib | Seaborn | Data Visualization in Python | Data Visualization",
+        "link": "https://www.youtube.com/watch?v=BGKkQ5OE7fg",
+        "topics": "Data Science, Python, Visualization, Seaborn",
+        "author": "Satyajit Pattnaik",
+        "duration": "24:13",
+        "publish_date": "2 years ago",
+        "viewCount": 1832,
+        "description": "Python"
+    },
+    {
+        "title": "Data Analysis in Python Pandas: 10 examples",
+        "link": "https://www.youtube.com/watch?v=mkYBJwX_dMs",
+        "topics": "Data Science, Python, Analysis, Panda",
+        "author": "Chandoo",
+        "duration": "18:18",
+        "publish_date": "1 year ago",
+        "viewCount": 43566,
+        "description": "Pandas"
+    },
+    {
+        "title": "Pandas for Data Science in 20 Minutes | Python Crash Course",
+        "link": "https://www.youtube.com/watch?v=tRKeLrwfUgU",
+        "topics": "Data Science, Python, Analysis, Panda",
+        "author": "Nicholas Renotte",
+        "duration": "23:06",
+        "publish_date": "3 years ago",
+        "viewCount": 97794,
+        "description": "Want to get up to speed with "
+    },
+    {
+        "title": "Exploratory Data Analysis in Pandas | Python Pandas Tutorials",
+        "link": "https://www.youtube.com/watch?v=Liv6eeb1VfE",
+        "topics": "Data Science, Python, Analysis, Panda",
+        "author": "Alex The Analyst",
+        "duration": "32:13",
+        "publish_date": "8 months ago",
+        "viewCount": 76423,
+        "description": "In this series we will be walking through everything you need to know to get started in "
+    },
+    {
+        "title": "Top 8 Python Libraries You Must Know In 2023 For Data Science | Python Modules for Data Science",
+        "link": "https://www.youtube.com/watch?v=KOmGPNS-YM8",
+        "topics": "Data Science, Python, Analysis, Scipy",
+        "author": "codebasics",
+        "duration": "5:57",
+        "publish_date": "1 year ago",
+        "viewCount": 47750,
+        "description": "Top 8 "
+    },
+    {
+        "title": "Data Analysis with Python for Excel Users - Full Course",
+        "link": "https://www.youtube.com/watch?v=WcDaZ67TVRo",
+        "topics": "Data Science, Python, Analysis, Scipy",
+        "author": "freeCodeCamp.org",
+        "duration": "3:57:46",
+        "publish_date": "2 years ago",
+        "viewCount": 1575014,
+        "description": "Learn how to use "
+    },
+    {
+        "title": "Data Analysis in Python Pandas: 10 examples",
+        "link": "https://www.youtube.com/watch?v=mkYBJwX_dMs",
+        "topics": "Data Science, Python, Analysis, Scipy",
+        "author": "Chandoo",
+        "duration": "18:18",
+        "publish_date": "1 year ago",
+        "viewCount": 43566,
+        "description": "Pandas is the most useful "
+    },
+    {
+        "title": "ACID Properties in DBMS With Examples | In-depth Explanation",
+        "link": "https://www.youtube.com/watch?v=clPPKgYJC10",
+        "topics": "PostgreSQL, Basics, ACID",
+        "author": "Crack Concepts",
+        "duration": "9:41",
+        "publish_date": "2 years ago",
+        "viewCount": 172402,
+        "description": "In this video, we'll discuss about "
+    },
+    {
+        "title": "The MAIN PostgreSQL vs MySQL Difference is...",
+        "link": "https://www.youtube.com/watch?v=JVxUukzu30c",
+        "topics": "PostgreSQL, Basics, ACID",
+        "author": "Database Dive",
+        "duration": "0:26",
+        "publish_date": "5 months ago",
+        "viewCount": 390,
+        "description": "We hope you've liked this "
+    },
+    {
+        "title": "PostgreSQL Tutorial for Beginners 1 - Introduction to PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=FCa4HsG-hb4",
+        "topics": "PostgreSQL, Basics, ACID",
+        "author": "ProgrammingKnowledge",
+        "duration": "5:04",
+        "publish_date": "4 years ago",
+        "viewCount": 47346,
+        "description": "Welcome to "
+    },
+    {
+        "title": "Postgres, MVCC, and You by David Wolever",
+        "link": "https://www.youtube.com/watch?v=TjwLrDrbqfs",
+        "topics": "PostgreSQL, Basics, MVCC",
+        "author": "GTALUG",
+        "duration": "44:22",
+        "publish_date": "5 years ago",
+        "viewCount": 521,
+        "description": "Meeting page -- https://gtalug.org/meeting/2018-02/"
+    },
+    {
+        "title": "Introduction to PostgreSQL - Overview - PostgreSQL Tutorial",
+        "link": "https://www.youtube.com/watch?v=ZOKFGDzAg78",
+        "topics": "PostgreSQL, Basics, MVCC",
+        "author": "Percona",
+        "duration": "8:10",
+        "publish_date": "3 years ago",
+        "viewCount": 9117,
+        "description": "An overview of the features and functions of #"
+    },
+    {
+        "title": "MVCC Unmasked",
+        "link": "https://www.youtube.com/watch?v=gAE_MSQtqnQ",
+        "topics": "PostgreSQL, Basics, MVCC",
+        "author": "Postgres Conference",
+        "duration": "51:02",
+        "publish_date": "2 years ago",
+        "viewCount": 1408,
+        "description": "Multi-Version Concurrency Control ("
+    },
+    {
+        "title": "pgAdmin: Transactions in the Query tool",
+        "link": "https://www.youtube.com/watch?v=ZT1eCA1dcf8",
+        "topics": "PostgreSQL, Basics, Transactions",
+        "author": "EDB",
+        "duration": "7:49",
+        "publish_date": "1 year ago",
+        "viewCount": 2591,
+        "description": "pgAdmin: "
+    },
+    {
+        "title": "MySQL: AUTOCOMMIT, COMMIT, ROLLBACK",
+        "link": "https://www.youtube.com/watch?v=GOQVlrQohtM",
+        "topics": "PostgreSQL, Basics, Transactions",
+        "author": "Bro Code",
+        "duration": "2:38",
+        "publish_date": "1 year ago",
+        "viewCount": 44661,
+        "description": "MySQL #"
+    },
+    {
+        "title": "PostgreSQL Tutorial Full Course 2022",
+        "link": "https://www.youtube.com/watch?v=85pG_pDkITY",
+        "topics": "PostgreSQL, Basics, Transactions",
+        "author": "Derek Banas",
+        "duration": "3:42:11",
+        "publish_date": "1 year ago",
+        "viewCount": 208672,
+        "description": "Ask me Anything Anytime on Twitter: https://x.com/NewThinkTank I provide here in this "
+    },
+    {
+        "title": "self 6 write ahead logs || distributed system design",
+        "link": "https://www.youtube.com/watch?v=EYRTabUvaAo",
+        "topics": "PostgreSQL, Basics, Write-ahead Log",
+        "author": "Palash on engineering",
+        "duration": "3:28",
+        "publish_date": "1 year ago",
+        "viewCount": 1146,
+        "description": "Today we are going to discuss another design pattern in distributed systems called right "
+    },
+    {
+        "title": "Write Ahead Logging",
+        "link": "https://www.youtube.com/watch?v=dEbw211njcc",
+        "topics": "PostgreSQL, Basics, Write-ahead Log",
+        "author": "Mike",
+        "duration": "6:21",
+        "publish_date": "10 years ago",
+        "viewCount": 17550,
+        "description": "High Level "
+    },
+    {
+        "title": "60- PostgreSQL log",
+        "link": "https://www.youtube.com/watch?v=Q8ZS-b3cJIg",
+        "topics": "PostgreSQL, Basics, Write-ahead Log",
+        "author": "E-MultiSkills Database  services",
+        "duration": "14:32",
+        "publish_date": "2 years ago",
+        "viewCount": 5160,
+        "description": "( 24*7) on Call Support for "
+    },
+    {
+        "title": "SQL Tutorial - 29: SQL JOINS",
+        "link": "https://www.youtube.com/watch?v=LlCURXIdKo8",
+        "topics": "PostgreSQL, Syntax, JOINS",
+        "author": "The Bad Tutorials",
+        "duration": "7:54",
+        "publish_date": "10 years ago",
+        "viewCount": 342547,
+        "description": "In this tutorial we'll take a look at "
+    },
+    {
+        "title": "Postgres - Left Outer and Right Outer Joins in PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=h7SEZcTHRFM",
+        "topics": "PostgreSQL, Syntax, JOINS",
+        "author": "Analytics Excellence",
+        "duration": "15:41",
+        "publish_date": "1 year ago",
+        "viewCount": 1191,
+        "description": "SQL"
+    },
+    {
+        "title": "SQL Joins | Joins In SQL | Joins In SQL With Examples | SQL Tutorial For Beginners | Simplilearn",
+        "link": "https://www.youtube.com/watch?v=vncBSUNb4NA",
+        "topics": "PostgreSQL, Syntax, JOINS",
+        "author": "Simplilearn",
+        "duration": "35:23",
+        "publish_date": "3 years ago",
+        "viewCount": 186515,
+        "description": "This video on "
+    },
+    {
+        "title": "Secret To Optimizing SQL Queries - Understand The SQL Execution Order",
+        "link": "https://www.youtube.com/watch?v=BHwzDmr6d7s",
+        "topics": "PostgreSQL, Syntax, QUERIES",
+        "author": "ByteByteGo",
+        "duration": "5:57",
+        "publish_date": "8 months ago",
+        "viewCount": 288938,
+        "description": "Animation tools: Adobe Illustrator and After Effects. Checkout our bestselling System Design Interview books: Volume 1:\u00a0..."
+    },
+    {
+        "title": "Learn how to write SQL Queries(Practice Complex SQL Queries)",
+        "link": "https://www.youtube.com/watch?v=FNYdBLwZ6cE",
+        "topics": "PostgreSQL, Syntax, QUERIES",
+        "author": "techTFQ",
+        "duration": "49:56",
+        "publish_date": "2 years ago",
+        "viewCount": 1395719,
+        "description": "Learn how to write "
+    },
+    {
+        "title": "PostgreSQL CRASH COURSE - Learn PostgreSQL in 2022",
+        "link": "https://www.youtube.com/watch?v=zw4s3Ey8ayo",
+        "topics": "PostgreSQL, Syntax, QUERIES",
+        "author": "Troy Amelotte",
+        "duration": "50:26",
+        "publish_date": "2 years ago",
+        "viewCount": 175602,
+        "description": "Thank you for watching! If you enjoyed please consider subscribing and liking the video. Follow me on Twitter\u00a0..."
+    },
+    {
+        "title": "Postgres - AS and Union in PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=uqKKvCU6WUs",
+        "topics": "PostgreSQL, Syntax, UNIONS",
+        "author": "Analytics Excellence",
+        "duration": "10:16",
+        "publish_date": "1 year ago",
+        "viewCount": 1126,
+        "description": "SQL"
+    },
+    {
+        "title": "Combine SQL Queries With UNION, INTERSECT, EXCEPT",
+        "link": "https://www.youtube.com/watch?v=krnAfIHqGzI",
+        "topics": "PostgreSQL, Syntax, UNIONS",
+        "author": "Becoming a Data Scientist",
+        "duration": "5:04",
+        "publish_date": "4 years ago",
+        "viewCount": 40561,
+        "description": "Step-by-step tutorial shows you how to combine your "
+    },
+    {
+        "title": "SQL Intersect, Union, Union All, Minus, and Except",
+        "link": "https://www.youtube.com/watch?v=bL5UX-p1wMc",
+        "topics": "PostgreSQL, Syntax, UNIONS",
+        "author": "1Keydata",
+        "duration": "1:56",
+        "publish_date": "10 years ago",
+        "viewCount": 70006,
+        "description": "This video explains how the keywords INTERSECT, "
+    },
+    {
+        "title": "37-Subquery Using ALL,ANY & EXISTS Operators in SQL | Example | Advance SQL | EXISTS vs IN vs JOINS",
+        "link": "https://www.youtube.com/watch?v=JkfUvuKL2UM",
+        "topics": "PostgreSQL, Syntax, INTERSECTIONS",
+        "author": "CodeEra",
+        "duration": "13:24",
+        "publish_date": "6 months ago",
+        "viewCount": 7237,
+        "description": "Are you new to "
+    },
+    {
+        "title": "EXIST Function in SQL",
+        "link": "https://www.youtube.com/watch?v=HM6Jc5YGubQ",
+        "topics": "PostgreSQL, Syntax, INTERSECTIONS",
+        "author": "Edredo for Learners",
+        "duration": "8:04",
+        "publish_date": "8 years ago",
+        "viewCount": 115686,
+        "description": "Last but not the least, SUBSCRIBE our YouTube channel to stay updated about the regularly uploaded new videos."
+    },
+    {
+        "title": "Advanced SQL Tutorial | Temp Tables",
+        "link": "https://www.youtube.com/watch?v=RF0LE3hYFrI",
+        "topics": "PostgreSQL, Syntax, INTERSECTIONS",
+        "author": "Alex The Analyst",
+        "duration": "10:19",
+        "publish_date": "3 years ago",
+        "viewCount": 213443,
+        "description": "In today's Advanced "
+    },
+    {
+        "title": "Enterprise Authentication with PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=puOdjchhEa0",
+        "topics": "PostgreSQL, Security, Authentication",
+        "author": "Southern California Linux Expo",
+        "duration": "38:32",
+        "publish_date": "3 years ago",
+        "viewCount": 2043,
+        "description": "Talk by Stephen Frost https://www.socallinuxexpo.org/scale/18x/presentations/enterprise-"
+    },
+    {
+        "title": "roles and privileges in postgres",
+        "link": "https://www.youtube.com/watch?v=IBhMAH6SPWU",
+        "topics": "PostgreSQL, Security, Authentication",
+        "author": "CHENNAKESHAVA RAMESH",
+        "duration": "10:32",
+        "publish_date": "5 years ago",
+        "viewCount": 16233,
+        "description": "Demo of roles and privileges in "
+    },
+    {
+        "title": "Spring Boot 3.0 Security | Authentication and Authorization | [New Changes] | javaTechie",
+        "link": "https://www.youtube.com/watch?v=R76S0tfv36w",
+        "topics": "PostgreSQL, Security, Authentication",
+        "author": "Java Techie",
+        "duration": "58:06",
+        "publish_date": "1 year ago",
+        "viewCount": 166214,
+        "description": "In this Tutorial, we will understand how to perform spring "
+    },
+    {
+        "title": "Part 13- PostgreSQL user and role Management",
+        "link": "https://www.youtube.com/watch?v=-2kYJ0gZmCo",
+        "topics": "PostgreSQL, Security, Roles",
+        "author": "E-MultiSkills Database  services",
+        "duration": "22:53",
+        "publish_date": "3 years ago",
+        "viewCount": 49101,
+        "description": "( 24*7) on Call Support for "
+    },
+    {
+        "title": "For Your Eyes Only: Roles, Privileges, and Security in PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=W_RPbUbD-Rc",
+        "topics": "PostgreSQL, Security, Roles",
+        "author": "Southern California Linux Expo",
+        "duration": "50:40",
+        "publish_date": "10 months ago",
+        "viewCount": 391,
+        "description": "Talk by Ryan Booz\u00a0..."
+    },
+    {
+        "title": "roles and privileges in postgres",
+        "link": "https://www.youtube.com/watch?v=IBhMAH6SPWU",
+        "topics": "PostgreSQL, Security, Roles",
+        "author": "CHENNAKESHAVA RAMESH",
+        "duration": "10:32",
+        "publish_date": "5 years ago",
+        "viewCount": 16233,
+        "description": "Demo of "
+    },
+    {
+        "title": "How to enable SSL and TLS in PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=Ww_1Pqi1k20",
+        "topics": "PostgreSQL, Security, SSL",
+        "author": "E-MultiSkills Database  services",
+        "duration": "10:07",
+        "publish_date": "3 weeks ago",
+        "viewCount": 175,
+        "description": "postgres"
+    },
+    {
+        "title": "PostgreSQL Security Features: Episode 5 - Data Encryption",
+        "link": "https://www.youtube.com/watch?v=W-I3vaRgHtA",
+        "topics": "PostgreSQL, Security, SSL",
+        "author": "EDB",
+        "duration": "1:49",
+        "publish_date": "2 years ago",
+        "viewCount": 3778,
+        "description": "PostgreSQL"
+    },
+    {
+        "title": "No Excuses PostgreSQL Security",
+        "link": "https://www.youtube.com/watch?v=u5IxErH-DcY",
+        "topics": "PostgreSQL, Security, SSL",
+        "author": "Southern California Linux Expo",
+        "duration": "37:19",
+        "publish_date": "3 years ago",
+        "viewCount": 116,
+        "description": "Talk by Darren Douglas https://www.socallinuxexpo.org/scale/18x/presentations/no-excuses-"
+    },
+    {
+        "title": "How to Setup Row Level Security (RLS) in PostgreSQL",
+        "link": "https://www.youtube.com/watch?v=j53NoW9cPtY",
+        "topics": "PostgreSQL, Security, Row-Level Security",
+        "author": "Programonaut",
+        "duration": "5:59",
+        "publish_date": "5 months ago",
+        "viewCount": 420,
+        "description": "Learn how to set up "
+    },
+    {
+        "title": "Implement Authorization using Row Level Security with Supabase",
+        "link": "https://www.youtube.com/watch?v=Ow_Uzedfohk",
+        "topics": "PostgreSQL, Security, Row-Level Security",
+        "author": "Supabase",
+        "duration": "17:39",
+        "publish_date": "2 years ago",
+        "viewCount": 38551,
+        "description": "He steps through implementing some common policies using the Supabase Dashboard and demonstrates how rules across\u00a0..."
+    },
+    {
+        "title": "5mins of Postgres E28: Row-Level security in Postgres, security invoker views & LEAKPROOF functions",
+        "link": "https://www.youtube.com/watch?v=4RNCsJ_xMIE",
+        "topics": "PostgreSQL, Security, Row-Level Security",
+        "author": "pganalyze",
+        "duration": "5:34",
+        "publish_date": "1 year ago",
+        "viewCount": 1042,
+        "description": "Today, we're going to talk about "
+    },
+    {
+        "title": "MLS PostgreSQL Implementing Multi level Security in PostgreSQL with RLS and SELinux  Joe Conway mp4",
+        "link": "https://www.youtube.com/watch?v=TK1AEt4zvIc",
+        "topics": "PostgreSQL, Security, SELinux",
+        "author": "Postgres Conference",
+        "duration": "25:10",
+        "publish_date": "7 years ago",
+        "viewCount": 620,
+        "description": "PostgreSQL"
+    },
+    {
+        "title": "SELinux System Administration, Third Edition | 8. SEPostgreSQL \u2013 Extending PostgreSQL with SELinux",
+        "link": "https://www.youtube.com/watch?v=ANiV3JqUgiQ",
+        "topics": "PostgreSQL, Security, SELinux",
+        "author": "Code in Action",
+        "duration": "12:26",
+        "publish_date": "3 years ago",
+        "viewCount": 105,
+        "description": "This is the \u201cCode in Action\u201d video for chapter 8 of "
+    },
+    {
+        "title": "Row Level Security",
+        "link": "https://www.youtube.com/watch?v=-9QqQ2jkG_4",
+        "topics": "PostgreSQL, Security, SELinux",
+        "author": "PostgresConf South Africa",
+        "duration": "43:14",
+        "publish_date": "5 years ago",
+        "viewCount": 8569,
+        "description": "Bennie Swart https://postgresconf.org/conferences/SouthAfrica2018/program/proposals/791 The second South African\u00a0..."
+    },
+    {
+        "title": "5mins of Postgres E6: Optimizing Postgres Text Search with Trigrams and GiST indexes",
+        "link": "https://www.youtube.com/watch?v=JtXHTQUKPLM",
+        "topics": "PostgreSQL, Optimizations, B-Tree",
+        "author": "pganalyze",
+        "duration": "5:22",
+        "publish_date": "1 year ago",
+        "viewCount": 1808,
+        "description": "Today, we're looking at "
+    },
+    {
+        "title": "PostgresOpen 2019 Look It Up Practical PostgreSQL Indexing",
+        "link": "https://www.youtube.com/watch?v=Xv0NFozBIbM",
+        "topics": "PostgreSQL, Optimizations, B-Tree",
+        "author": "Postgres Open",
+        "duration": "45:36",
+        "publish_date": "4 years ago",
+        "viewCount": 3898,
+        "description": "But for example if you're if you have you know sha-256 hash values you may not want to use a "
+    },
+    {
+        "title": "Postgres index bloat | The Backend Engineering Show",
+        "link": "https://www.youtube.com/watch?v=qcInj-XW1Vc",
+        "topics": "PostgreSQL, Optimizations, B-Tree",
+        "author": "Hussein Nasser",
+        "duration": "27:06",
+        "publish_date": "2 years ago",
+        "viewCount": 6883,
+        "description": "Postgresql"
+    },
+    {
+        "title": "5mins of Postgres E48: Benchmarking multi column, covering and hash indexes in Postgres",
+        "link": "https://www.youtube.com/watch?v=sY2auWXW0Fw",
+        "topics": "PostgreSQL, Optimizations, Hash",
+        "author": "pganalyze",
+        "duration": "5:33",
+        "publish_date": "1 year ago",
+        "viewCount": 909,
+        "description": "Today, we talk about benchmarking multi-column vs. multiple combined indexes in "
+    },
+    {
+        "title": "5 Secrets for making PostgreSQL run BLAZING FAST. How to improve database performance.",
+        "link": "https://www.youtube.com/watch?v=YON9PliOYFk",
+        "topics": "PostgreSQL, Optimizations, Hash",
+        "author": "Dreams of Code",
+        "duration": "8:12",
+        "publish_date": "10 months ago",
+        "viewCount": 60719,
+        "description": "There's an approach in here for everyone! "
+    },
+    {
+        "title": "How do nested loop, hash, and merge joins work? Databases for Developers Performance #7",
+        "link": "https://www.youtube.com/watch?v=pJWCwfv983Q",
+        "topics": "PostgreSQL, Optimizations, Hash",
+        "author": "The Magic of SQL",
+        "duration": "15:55",
+        "publish_date": "3 years ago",
+        "viewCount": 55836,
+        "description": "There are three key algorithms use to combine rows from two tables: * Nested Loops * "
+    },
+    {
+        "title": "Scaling Postgres Episode 89 Performance Impressions | Mystery Solving | GiST Indexes | K-Anonymity",
+        "link": "https://www.youtube.com/watch?v=9nRaozORvXY",
+        "topics": "PostgreSQL, Optimizations, GiST",
+        "author": "Scaling Postgres",
+        "duration": "15:43",
+        "publish_date": "4 years ago",
+        "viewCount": 878,
+        "description": "In this episode of Scaling "
+    },
+    {
+        "title": "Performance Optimization - How to Get the Best Out of Your Indexes on Postgres and MySQL",
+        "link": "https://www.youtube.com/watch?v=qpGVU0bHino",
+        "topics": "PostgreSQL, Optimizations, GiST",
+        "author": "Percona",
+        "duration": "1:34:16",
+        "publish_date": "2 years ago",
+        "viewCount": 573,
+        "description": "Charly Batista presents, Performance "
+    },
+    {
+        "title": "Database Indexing Explained (with PostgreSQL)",
+        "link": "https://www.youtube.com/watch?v=-qNSXK7s7_w",
+        "topics": "PostgreSQL, Optimizations, GiST",
+        "author": "Hussein Nasser",
+        "duration": "18:19",
+        "publish_date": "3 years ago",
+        "viewCount": 268732,
+        "description": "This is a practical video on Database Indexing where I explain what is an index, why do we need it and how it can improve the\u00a0..."
+    },
+    {
+        "title": "Flexible Indexing With Postgres - Bruce Momjian - EDB - Percona Community Live - PostgreSQL tutorial",
+        "link": "https://www.youtube.com/watch?v=QQ1eyBcphEs",
+        "topics": "PostgreSQL, Optimizations, SP-GiST",
+        "author": "Percona",
+        "duration": "59:44",
+        "publish_date": "1 year ago",
+        "viewCount": 198,
+        "description": "When considering database indexing, many people are confused by the many #"
+    },
+    {
+        "title": "Indexing Deep Dive | Scaling Postgres 285",
+        "link": "https://www.youtube.com/watch?v=FyfoQyPiI80",
+        "topics": "PostgreSQL, Optimizations, SP-GiST",
+        "author": "Scaling Postgres",
+        "duration": "18:03",
+        "publish_date": "4 months ago",
+        "viewCount": 580,
+        "description": "In this episode of Scaling "
+    },
+    {
+        "title": "Looking It Up: PostgreSQL Indexes",
+        "link": "https://www.youtube.com/watch?v=Qf1GvMHfzQA",
+        "topics": "PostgreSQL, Optimizations, SP-GiST",
+        "author": "EDB",
+        "duration": "41:47",
+        "publish_date": "3 years ago",
+        "viewCount": 410,
+        "description": "PostgreSQL"
+    },
+    {
+        "title": "PostgreSQL performance tips you have never seen before | Citus Con: An Event for Postgres 2023",
+        "link": "https://www.youtube.com/watch?v=m8ogrogKjXo",
+        "topics": "PostgreSQL, Optimizations, GIN",
+        "author": "Microsoft Developer",
+        "duration": "25:19",
+        "publish_date": "9 months ago",
+        "viewCount": 17646,
+        "description": "Video of a conference talk about some "
+    },
+    {
+        "title": "5mins of Postgres E6: Optimizing Postgres Text Search with Trigrams and GiST indexes",
+        "link": "https://www.youtube.com/watch?v=JtXHTQUKPLM",
+        "topics": "PostgreSQL, Optimizations, GIN",
+        "author": "pganalyze",
+        "duration": "5:22",
+        "publish_date": "1 year ago",
+        "viewCount": 1808,
+        "description": "Today, we're looking at "
+    },
+    {
+        "title": "Performance Optimization - How to Get the Best Out of Your Indexes on Postgres and MySQL",
+        "link": "https://www.youtube.com/watch?v=qpGVU0bHino",
+        "topics": "PostgreSQL, Optimizations, GIN",
+        "author": "Percona",
+        "duration": "1:34:16",
+        "publish_date": "2 years ago",
+        "viewCount": 573,
+        "description": "Charly Batista presents, Performance "
+    },
+    {
+        "title": "5 Secrets for making PostgreSQL run BLAZING FAST. How to improve database performance.",
+        "link": "https://www.youtube.com/watch?v=YON9PliOYFk",
+        "topics": "PostgreSQL, Optimizations, BRIN",
+        "author": "Dreams of Code",
+        "duration": "8:12",
+        "publish_date": "10 months ago",
+        "viewCount": 60719,
+        "description": "There's an approach in here for everyone! "
+    },
+    {
+        "title": "Unconventional ways to index UUIDs in PostgreSQL | Citus Con: An Event for Postgres 2023",
+        "link": "https://www.youtube.com/watch?v=iZtssl7rkBU",
+        "topics": "PostgreSQL, Optimizations, BRIN",
+        "author": "Microsoft Developer",
+        "duration": "34:08",
+        "publish_date": "9 months ago",
+        "viewCount": 2193,
+        "description": "Video of a conference talk by Haki Benita about unconventional ways to index UUIDs in "
+    },
+    {
+        "title": "5mins of Postgres E38: BRIN indexes, tuning pages_per_range & determining correlation with pg_stats",
+        "link": "https://www.youtube.com/watch?v=7Hy2mNuqdjk",
+        "topics": "PostgreSQL, Optimizations, BRIN",
+        "author": "pganalyze",
+        "duration": "5:16",
+        "publish_date": "1 year ago",
+        "viewCount": 552,
+        "description": "We talk about tuning a "
+    }
+]
