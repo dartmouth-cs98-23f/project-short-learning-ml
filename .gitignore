@@ -165,6 +165,7 @@ cython_debug/
 # Generated files
 *.mp4
 *.csv
+*.part
 
 # ignore compressed  models
 *.gz
