@@ -1,6 +1,7 @@
 # Data files
 app/data/*
 app/*/data/*/*/*
+app/*/data/*/*/*
 app/*/data/*/*
 app/*/data/*
 
