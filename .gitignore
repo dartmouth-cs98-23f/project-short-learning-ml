@@ -1,9 +1,6 @@
 # Data files
-app/data/*
-app/*/data/*/*/*
-app/*/data/*/*/*
-app/*/data/*/*
-app/*/data/*
+*.pt
+app/rec_engine/data/trash
 
 archive/labeling/*/data
 
