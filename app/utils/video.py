@@ -56,6 +56,7 @@ def download_videos_from_json(file_path: str) -> None:
             title = video['title'].replace(' ', '_')
             author = video['author'].replace(' ', '_')
             topics = video['topics'].replace(', ', '_')
+
             filename = os.path.join(data_dir, f"{topics}_{title}_{author}.mp4")
             download_video(url, filename)
 
