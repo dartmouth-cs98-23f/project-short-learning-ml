@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Prompt Engineering Tutorial \u2013 Master ChatGPT and LLM Responses",
+        "link": "https://www.youtube.com/watch?v=_ZvnD73m40o",
+        "topics": "ML, NLP, LLM, GPT",
+        "author": "freeCodeCamp.org",
+        "duration": "41:36",
+        "publish_date": "5 months ago",
+        "viewCount": 921386,
+        "description": "Learn prompt engineering techniques to get better results from ChatGPT and other LLMs. \u270f\ufe0f Course developed by\u00a0...",
+        "thumbnail": "https://i.ytimg.com/vi/_ZvnD73m40o/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCij1VFvyCrAcOTFuYoh3jvC8yKGw"
+    },
+    {
+        "title": "Why Large Language Models Hallucinate",
+        "link": "https://www.youtube.com/watch?v=cfqtFvWOfg0",
+        "topics": "ML, NLP, LLM, GPT",
+        "author": "IBM Technology",
+        "duration": "9:38",
+        "publish_date": "10 months ago",
+        "viewCount": 139074,
+        "description": "Large language models (LLMs) like chatGPT can generate authoritative-sounding prose on many topics and domains, they are\u00a0...",
+        "thumbnail": "https://i.ytimg.com/vi/cfqtFvWOfg0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCtoxFvHwDODtGJkQBT0XodfhPEqQ"
+    },
+    {
+        "title": "What are Large Language Models (LLMs)?",
+        "link": "https://www.youtube.com/watch?v=iR2O2GPbB0E",
+        "topics": "ML, NLP, LLM, GPT",
+        "author": "Google for Developers",
+        "duration": "5:30",
+        "publish_date": "9 months ago",
+        "viewCount": 180334,
+        "description": "Learn about Large Language Models (LLMs), a powerful neural network that enables computers to process and generate\u00a0...",
+        "thumbnail": "https://i.ytimg.com/vi/iR2O2GPbB0E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQbYBXqMEkhwdkk0dpc73d_S4zUw"
+    }
+]
