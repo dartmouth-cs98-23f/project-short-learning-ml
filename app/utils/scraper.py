@@ -56,19 +56,41 @@ def convert_to_date(years_ago):
     return date.isoformat()
 
 # Scraping function that scrapes 'count' videos of each topic that corresponds to id
-def scrape(ids: list, count: int):
+def scrape(ids: list, count: int, combine: bool):
 
-    # Create topics dictionary from a file
+    # Create topics dictionary and index from a file
     with open("alltopics.json", "r") as topics_file:
         topics = json.load(topics_file)
-
+    with open("topicindex.json", "r") as index_file:
+        index = json.load(index_file)
+    
     # Initialize list to hold topics we are searching for 
     search_topics = []
 
     # Iterate through keys and ensure they match with a topic
     for id in ids:
+        flag = 0
         if id in topics:
-            search_topics.append([id, topics[id]])
+            super_topic = ""
+            for value in index:
+                if id in value['subtopics']:
+                    super_topic_id = value['topic']
+                    super_topic = topics[super_topic_id]
+                    search_query = topics[id].replace(",", " ") + " " + super_topic
+                    search_topics.append([[int(id), int(super_topic_id)], search_query])
+                    if combine:
+                        for value in index:
+                            search_query = topics[id].replace(",", " ") + " " + super_topic + " " + topics[value['topic']].replace(",", " ")
+                            search_topics.append([[int(id), int(super_topic_id), int(value['topic'])], search_query])
+                    flag = 1 
+                    continue
+        if flag == 0:
+            search_topics.append([[int(id)], topics[id]])
+            if combine:
+                for value in index:
+                    search_query = topics[id].replace(",", " ") + " " + topics[value['topic']].replace(",", " ")
+                    search_topics.append([[int(id), int(value['topic'])], search_query])
+
 
     # Initialize a list to hold all video metadata
     videos_metadata = []
@@ -81,9 +103,10 @@ def scrape(ids: list, count: int):
     collection = db['video_metadata']
 
     # Loop through each keyword
-    for [topicId, keyword] in search_topics:
+    for [topicIDs, query] in search_topics:
+        print("Searching for ", query)
         # Search for videos using the keyword, the limit is how many videos we will save for this topic
-        search = VideosSearch(keyword.replace(", ", " "), limit=10)
+        search = VideosSearch(query, limit=count*2)
         results_json = search.result(mode=ResultMode.json)
 
         try:
@@ -118,7 +141,7 @@ def scrape(ids: list, count: int):
                     'uploader': result['channel']['name'],
                     'duration': duration,
                     "thumbnailURL": result['thumbnails'][-1]['url'],
-                    'topicId': topicId,
+                    'topicId': topicIDs,
                     'clips': [],
                     'views': [],
                     'likes': [],
@@ -168,4 +191,5 @@ with open("topicstosearch", "r") as to_search:
     for line in to_search:
         key = line.strip()
         search_keys.append(key)
-    scrape(search_keys, 5)
+    scrape(search_keys, 3, False)
+    scrape(search_keys, 1, True)
