@@ -112,7 +112,7 @@ def scrape(ids: list, count: int, combine: bool):
         try:
             results = json.loads(results_json)
         except json.JSONDecodeError:
-            print(f"Error decoding JSON for keyword {keyword}")
+            print(f"Error decoding JSON for keyword {query}")
             continue
 
         if results['result']:
