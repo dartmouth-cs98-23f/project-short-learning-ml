@@ -71,25 +71,34 @@ def scrape(ids: list, count: int, combine: bool):
     for id in ids:
         flag = 0
         if id in topics:
-            super_topic = ""
             for value in index:
+                super_topic = ""
+                super_topic_id = ""
                 if id in value['subtopics']:
                     super_topic_id = value['topic']
                     super_topic = topics[super_topic_id]
                     search_query = topics[id].replace(",", " ") + " " + super_topic
                     search_topics.append([[int(id), int(super_topic_id)], search_query])
+                    print("1 added ", search_query)
                     if combine:
-                        for value in index:
-                            search_query = topics[id].replace(",", " ") + " " + super_topic + " " + topics[value['topic']].replace(",", " ")
-                            search_topics.append([[int(id), int(super_topic_id), int(value['topic'])], search_query])
+                        for topic in index:
+                            print("Super id ", super_topic_id, " topic id ", topic['topic'])
+                            if id == topic['topic']:
+                                break
+                            elif super_topic_id != topic['topic']:
+                                search_query = topics[id].replace(",", " ") + " " + super_topic + " " + topics[topic['topic']].replace(",", " ")
+                                search_topics.append([[int(id), int(super_topic_id), int(topic['topic'])], search_query])
+                                print("2 added ", search_query)
                     flag = 1 
-                    continue
+                    break
         if flag == 0:
             search_topics.append([[int(id)], topics[id]])
             if combine:
                 for value in index:
-                    search_query = topics[id].replace(",", " ") + " " + topics[value['topic']].replace(",", " ")
-                    search_topics.append([[int(id), int(value['topic'])], search_query])
+                    if value['topic'] != id:
+                        search_query = topics[id].replace(",", " ") + " " + topics[value['topic']].replace(",", " ")
+                        search_topics.append([[int(id), int(value['topic'])], search_query])
+                        print("3 added ", search_query)
 
 
     # Initialize a list to hold all video metadata
@@ -100,7 +109,7 @@ def scrape(ids: list, count: int, combine: bool):
     mongo_uri = os.getenv('MONGODB_URI')
     client = MongoClient(mongo_uri)
     db = client['scraper']
-    collection = db['video_metadata']
+    collection = db['video_metadata-updated']
 
     # Loop through each keyword
     for [topicIDs, query] in search_topics:
@@ -151,11 +160,11 @@ def scrape(ids: list, count: int, combine: bool):
                 videos_metadata.append(video_data)
 
                 # upload result to MongoDB
-                upload_result = collection.insert_one(video_data)
-                if upload_result:
-                    print(f"Uploaded {result['title']} to MongoDB")
-                # convert id from upload to string so it can be converted to json
-                video_data['_id'] = str(upload_result.inserted_id)
+                # upload_result = collection.insert_one(video_data)
+                # if upload_result:
+                #     print(f"Uploaded {result['title']} to MongoDB")
+                # # convert id from upload to string so it can be converted to json
+                # video_data['_id'] = str(upload_result.inserted_id)
                 videos_uploaded += 1
 
         """  # Make API call
@@ -178,12 +187,9 @@ def scrape(ids: list, count: int, combine: bool):
                 print(f"Video data successfully sent to the API for {result['title']}.")
             else:
                 print(f"Failed to send video data for {result['title']}. Status code:", response.status_code) """
-
-    # Write the collected metadata to a file in JSON format
-    with open("video_metadata.json", "w") as output_file:
-        json.dump(videos_metadata, output_file, indent=4)
-
-    print("Check 'video_metadata.json' for the results")
+    return videos_metadata
+    
+    
 
 # Determine which topics to search for based on toSearch file
 with open("topicstosearch", "r") as to_search:
@@ -191,5 +197,11 @@ with open("topicstosearch", "r") as to_search:
     for line in to_search:
         key = line.strip()
         search_keys.append(key)
-    scrape(search_keys, 3, False)
-    scrape(search_keys, 1, True)
+    metadata1 = scrape(search_keys, 3, False)
+    metadata2 = scrape(search_keys, 1, True)
+    total_metadata = metadata1 + metadata2
+    # Write the collected metadata to a file in JSON format
+    with open("video_metadata.json", "w") as output_file:
+        json.dump(total_metadata, output_file, indent=4)
+
+    print("Check 'video_metadata.json' for the results")
