@@ -1,6 +1,11 @@
 import os
+import re
 import json
+from dotenv import load_dotenv
 from yt_dlp import YoutubeDL
+from pathlib import Path
+from pymongo import MongoClient
+
 
 def ensure_dir(directory):
     """Ensure that a directory exists. If it doesn't, create it."""
@@ -22,6 +27,10 @@ def download_video(url: str, filename: str) -> None:
     """
 
     try:
+        if os.path.exists(filename.replace('.part', '')):
+            print(f"Skipping download for {filename}, already exists")
+            return
+
         ydl_opts = {
             'format': 'best[ext=mp4]/best',  # Explicitly specify the best format (single file)
             'outtmpl': filename,
@@ -44,22 +53,36 @@ def download_videos_from_json(file_path: str) -> None:
     Returns:
       - `None`
     """
-    with open(file_path, 'r') as file:
-        videos = json.load(file)
+    load_dotenv()
+    mongo_uri = os.getenv('MONGODB_URI')
+    client = MongoClient(mongo_uri)
+    db = client['preTechnigalaClean_db']
+    collection = db['video_metadata']
         
-        # Ensure the data/videos directory exists
-        data_dir = os.path.join('data', 'videos')
-        ensure_dir(data_dir)
-        
-        for video in videos:
-            url = video['link'].replace("https://www.youtube.comhttps://www.youtube.com", "https://www.youtube.com")
-            title = video['title'].replace(' ', '_')
-            author = video['author'].replace(' ', '_')
-            topics = video['topics'].replace(', ', '_')
+    for video in collection.find():
+        video_id = str(video['_id'])
+        url = video['youtubeURL'].replace("https://www.youtube.comhttps://www.youtube.com", "https://www.youtube.com")
+        title = video['title'].replace(' ', '_')
+        author = video['uploader'].replace(' ', '_')
+        topics = ''.join(str(id) for id in video['topicId'])
 
-            filename = os.path.join(data_dir, f"{topics}_{title}_{author}.mp4")
+        home_dir = os.path.expanduser('~')
+        data_dir = os.path.join(home_dir, 'Videos', f"{video_id}")
+        filename = os.path.join(data_dir, "video.mp4")
+
+        # print("datadir: ", data_dir)
+        # print("filename: ", filename)
+
+        if not Path(filename).is_file():
+            # Ensure the data/videos directory exists
+            ensure_dir(data_dir)
             download_video(url, filename)
+        else:
+            # print(data_dir)
+            print(f"Skipping download for {data_dir}, already exists")
+
+        # download_video(url, filename)
 
 if __name__ == "__main__":
-    file_path = "video_metadata.json"  # Adjust this to the actual path of your JSON file
+    file_path = "video_metadata_test.json"  # Adjust this to the actual path of your JSON file
     download_videos_from_json(file_path)

@@ -11,49 +11,57 @@ from youtubesearchpython import VideosSearch, ResultMode
 # 
 
 def convert_duration_to_seconds(duration_str):
-    parts = duration_str.split(":")
-    if len(parts) == 3:
-        # Format is HH:MM:SS
-        hours, minutes, seconds = map(int, parts)
-        total_seconds = hours * 3600 + minutes * 60 + seconds
-    elif len(parts) == 2:
-        # Format is MM:SS
-        minutes, seconds = map(int, parts)
-        total_seconds = minutes * 60 + seconds
-    else:
-        # Assuming the format is just seconds (SS) for completeness
-        total_seconds = int(parts[0])
-    
-    return total_seconds
+    try:
+        parts = duration_str.split(":")
+        if len(parts) == 3:
+            # Format is HH:MM:SS
+            hours, minutes, seconds = map(int, parts)
+            total_seconds = hours * 3600 + minutes * 60 + seconds
+        elif len(parts) == 2:
+            # Format is MM:SS
+            minutes, seconds = map(int, parts)
+            total_seconds = minutes * 60 + seconds
+        else:
+            # Assuming the format is just seconds (SS) for completeness
+            total_seconds = int(parts[0])
+        
+        return total_seconds
+    except AttributeError:
+        return 0
 
 # Used to convert Youtube's "_ years/months/days ago" format to a ISO formatted date
 def convert_to_date(years_ago):
     # Extract the number
-    value = years_ago.split()[0]
-    if value == "Streamed":
-        value = int(years_ago.split()[1])
-        period = years_ago.split()[2]
-    else:
-        period = years_ago.split()[1]
-        value = int(value)
-    
-    # Create a date object
-    if period == "years" or period == "year":
-        date = datetime(datetime.now().year-value, datetime.now().month, datetime.now().day)
-    elif period == "months" or period == "month":
-        if value>=datetime.now().month:
-            date = datetime(datetime.now().year-1, datetime.now().month-value+12, datetime.now().day)
+    try:
+        value = years_ago.split()[0]
+        if value == "Streamed":
+            value = int(years_ago.split()[1])
+            period = years_ago.split()[2]
         else:
-            date = datetime(datetime.now().year, datetime.now().month-value, datetime.now().day)
-    elif period == "days" or period == "day":
-        if value>=datetime.now().day:
-            date = datetime(datetime.now().year, datetime.now().month-1, datetime.now().day+30-value)
+            period = years_ago.split()[1]
+            value = int(value)
+        
+        # Create a date object
+        if period == "years" or period == "year":
+            date = datetime(datetime.now().year-value, datetime.now().month, datetime.now().day)
+        elif period == "months" or period == "month":
+            if value>=datetime.now().month:
+                date = datetime(datetime.now().year-1, datetime.now().month-value+12, datetime.now().day)
+            else:
+                date = datetime(datetime.now().year, datetime.now().month-value, datetime.now().day)
+        elif period == "days" or period == "day":
+            if value>=datetime.now().day:
+                date = datetime(datetime.now().year, datetime.now().month-1, datetime.now().day+30-value)
+            else:
+                date = datetime(datetime.now().year, datetime.now().month, datetime.now().day-value)
         else:
-            date = datetime(datetime.now().year, datetime.now().month, datetime.now().day-value)
-    else:
-        date = datetime(datetime.now().year, datetime.now().month, datetime.now().day)
+            date = datetime(datetime.now().year, datetime.now().month, datetime.now().day)
 
-    return date.isoformat()
+        return date.isoformat()
+    except AttributeError:
+        date = datetime(datetime.now().year, datetime.now().month, datetime.now().day)
+        return date
+
 
 # Scraping function that scrapes 'count' videos of each topic that corresponds to id
 def scrape(ids: list, count: int, combine: bool):
@@ -79,16 +87,13 @@ def scrape(ids: list, count: int, combine: bool):
                     super_topic = topics[super_topic_id]
                     search_query = topics[id].replace(",", " ") + " " + super_topic
                     search_topics.append([[int(id), int(super_topic_id)], search_query])
-                    print("1 added ", search_query)
                     if combine:
                         for topic in index:
-                            print("Super id ", super_topic_id, " topic id ", topic['topic'])
                             if id == topic['topic']:
                                 break
                             elif super_topic_id != topic['topic']:
                                 search_query = topics[id].replace(",", " ") + " " + super_topic + " " + topics[topic['topic']].replace(",", " ")
                                 search_topics.append([[int(id), int(super_topic_id), int(topic['topic'])], search_query])
-                                print("2 added ", search_query)
                     flag = 1 
                     break
         if flag == 0:
@@ -98,18 +103,17 @@ def scrape(ids: list, count: int, combine: bool):
                     if value['topic'] != id:
                         search_query = topics[id].replace(",", " ") + " " + topics[value['topic']].replace(",", " ")
                         search_topics.append([[int(id), int(value['topic'])], search_query])
-                        print("3 added ", search_query)
 
 
     # Initialize a list to hold all video metadata
     videos_metadata = []
 
-    # Setup MongoDB connection
+    # Setup MongoDB connection - update to the name to the collection you want to write to
     load_dotenv()
     mongo_uri = os.getenv('MONGODB_URI')
     client = MongoClient(mongo_uri)
-    db = client['scraper']
-    collection = db['video_metadata-updated']
+    db = client['Technigala_updated']
+    collection = db['video_metadata']
 
     # Loop through each keyword
     for [topicIDs, query] in search_topics:
@@ -160,11 +164,13 @@ def scrape(ids: list, count: int, combine: bool):
                 videos_metadata.append(video_data)
 
                 # upload result to MongoDB
-                # upload_result = collection.insert_one(video_data)
-                # if upload_result:
-                #     print(f"Uploaded {result['title']} to MongoDB")
-                # # convert id from upload to string so it can be converted to json
-                # video_data['_id'] = str(upload_result.inserted_id)
+                upload_result = collection.insert_one(video_data)
+                print(video_data["topicId"])
+                if upload_result:
+                    print(f"Uploaded {result['title']} to MongoDB")
+                # convert id from upload to string so it can be converted to json
+                video_data['_id'] = str(upload_result.inserted_id)
+                print(video_data['_id'])
                 videos_uploaded += 1
 
         """  # Make API call
@@ -197,7 +203,7 @@ with open("topicstosearch", "r") as to_search:
     for line in to_search:
         key = line.strip()
         search_keys.append(key)
-    metadata1 = scrape(search_keys, 3, False)
+    metadata1 = scrape(search_keys, 1, False)
     metadata2 = scrape(search_keys, 1, True)
     total_metadata = metadata1 + metadata2
     # Write the collected metadata to a file in JSON format
